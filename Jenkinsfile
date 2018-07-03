@@ -21,7 +21,7 @@ node {
             }
         }
         stage ('Deploy') {
-            sh "echo 'shell scripts to deploy to server...'"
+            sh "echo 'shell scripts to deploy to server...'; wget http://devops360.ga"
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
