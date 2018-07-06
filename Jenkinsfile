@@ -26,5 +26,8 @@ node {
     } catch (err) {
         currentBuild.result = 'FAILED'
         throw err
+    } finally {
+        step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'aygunaydin@gmail.com', sendToIndividuals: true])
     }
+
 }
